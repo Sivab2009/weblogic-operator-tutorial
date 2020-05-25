@@ -18,7 +18,7 @@ build-domain-in-home-image:
     - script:
         name: Build docker image
         code: |
-             docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+             docker login -u $DOCKER_USERNAME 
               if docker pull $REGION.ocir.io/$TENANCY/$WERCKER_APPLICATION_NAME:latest; then
                 docker build --file Dockerfile.update \
                     --build-arg SOURCEIMAGE=$REGION.ocir.io/$TENANCY/$WERCKER_APPLICATION_NAME:latest \
